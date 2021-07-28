@@ -1,0 +1,97 @@
+@import url( "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Popins",sans-serif;
+}
+
+body{
+    background-color: dimgray;
+}
+.wrapper{
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    background: white;
+    position: absolute;
+    border-radius: 10px;
+    transform: translate(-50%, -50%) scale(1.4);
+}
+.wrapper header{
+    color: teal;
+    font-size: 23px;
+    font-weight: 500;
+    padding: 17px 30px;
+    border-bottom: 1px solid grey;
+}
+.wrapper header .active{
+     cursor: move;
+     user-select: none;
+
+}
+.wrapper .content{
+    display: flex;
+    margin: 30px 30px 40px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.content .icon{
+    height: 95px;
+    width: 95px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 5px solid teal;
+}
+
+.content .icon i{
+    color: black;
+    font-size: 45px;
+}
+
+.content .title{
+    font-size: 29px;
+    font-weight: 500;
+    color: teal;
+    margin: 5px 0;
+}
+
+.content p{
+    font-size: 16px;
+    text-align: center;
+}
+.wrapper .content{
+    padding:17px 20px
+}
+
+.wrapper .content span{
+    display:none
+}
+@media(max-width:850px){
+    body{
+        display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:100vh;
+    padding:0 10px
+}
+.wrapper{
+    position:relative;
+    top:0;
+    left:0;
+    transform:translate(0,0)
+}
+.wrapper :is(header,.content .icon,.content .title,.content p){
+    display:none
+}
+.wrapper .content{
+    padding:17px 20px
+}
+.wrapper .content span{
+    display:block
+}
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <title>Dragabile Div</title>
+</head>
+<body>
+    <div class="wrapper">
+        <header>Draggable Div </header>
+        <div class="content">
+            <div class="icon"><i class="bx bx-move"></i></div>
+            <div class="title">Draggable Div </div>
+            <p>This is draggable div with HTML CSS and JS </p>
+            <span>It's only work on PC or Laptop. Open this page there to see live preview.</span>
+        </div>
+    </div>
+
+
+    <script>
+        const wrapper=document.querySelector(".wrapper"),
+        header=wrapper.querySelector("header");
+        function onDrag({movementX:e,movementY:r}){let t=window.getComputedStyle(wrapper),a=parseInt(t.left),
+            o=parseInt(t.top);
+            wrapper.style.left=`${a+e}px`,wrapper.style.top=`${o+r}px`}
+            header.addEventListener("mousedown",()=>{header.classList.add("active"),
+            header.addEventListener("mousemove",onDrag)}),
+            document.addEventListener("mouseup",()=>{header.classList.remove("active"),
+            header.removeEventListener("mousemove",onDrag)});
+      </script>
+</body>
+</html>
